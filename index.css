@@ -1,0 +1,53 @@
+html, body {
+    background-color: #f4f4f5;
+    height: 100%;
+    margin: 0;
+}
+
+.sign-up {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    border: solid;
+    border-color: green;
+    width: 60%;
+    height: 100%;
+}
+
+.left1 {
+    border: solid;
+    border-color: blue;
+    flex: 1;
+}
+
+.image {
+    border: solid;
+    border-color: aqua;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+.left2 {
+    border: solid;
+    border-color: yellow;
+    height: 10%;
+}
+
+.left3 {
+    border: solid;
+    border-color: red;
+    height: 10%;
+}
+
+.right {
+    border: solid;
+    border-color: black;
+    width: 40%;
+    height: 100%;
+}
