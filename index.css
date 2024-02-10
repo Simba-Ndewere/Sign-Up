@@ -13,11 +13,35 @@ html, body {
     width: 50%;
     height: 100%;
     background-color: #69b16f;
+    align-items: center;
+    justify-content: end;
 }
 
 .right {
     display: flex;
     flex: 1;
-    background-color: #386739;
+    background-color: #201414;
     height: 100%;
+    align-items: center;
+    justify-content: start;
+}
+
+.imageLeft {
+    display: flex;
+    height: 70%;
+    background-size: cover;
+    width: 80%;
+    background-position:center;
+}
+
+.imageLeft img {
+    width:768px;
+    height: auto;
+}
+
+.imageRight {
+    display: flex;
+    height: 70%;
+    width: 80%;
+    background-color: white;
 }
