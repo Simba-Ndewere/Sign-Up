@@ -1,5 +1,5 @@
 html, body {
-    background-color: #f4f4f5;
+    background-color: #ebecf0;
     height: 100%;
     margin: 0;
 }
@@ -13,41 +13,54 @@ html, body {
 .left {
     display: flex;
     flex-direction: column;
-    border: solid;
-    border-color: green;
     width: 60%;
     height: 100%;
 }
 
 .left1 {
-    border: solid;
-    border-color: blue;
-    flex: 1;
-}
-
-.image {
-    border: solid;
-    border-color: aqua;
     display: flex;
-    height: 100%;
+    flex: 1;
+    align-items: end;
     justify-content: center;
 }
 
+.image {
+    display: flex;    
+}
+
+.form {
+    border: 2px solid lightgray;
+    background-color: #FFFFFF;
+    width: 100%;
+    margin: 70px;
+    border-radius: 30px;
+    margin-right: 100px;
+}
+
 .left2 {
-    border: solid;
-    border-color: yellow;
+    display: flex;
     height: 10%;
+    padding-left: 190px;
+    margin-bottom: 10px;
 }
 
 .left3 {
-    border: solid;
-    border-color: red;
+    display: flex;
     height: 10%;
+    gap: 30px;
+    padding-left: 200px;
+    font-size: 20px;
 }
 
 .right {
-    border: solid;
-    border-color: black;
     width: 40%;
     height: 100%;
+    display: flex;
+}
+
+.register {
+    display: flex;
+    border: solid;
+    border-color: black;
+    font-size: 50px;
 }
