@@ -14,7 +14,7 @@ html, body {
     display: flex;
     width: 50%;
     height: 100%;
-    background-color: #69b16f;
+    background-color: white;
     align-items: center;
     justify-content: end;
 }
@@ -22,7 +22,7 @@ html, body {
 .right {
     display: flex;
     flex: 1;
-    background-color: #201414;
+    background-color: white;
     height: 100%;
     align-items: center;
     justify-content: start;
@@ -86,7 +86,7 @@ form {
     width: 120px;
     left: 0;
     bottom: 0;
-    background: #69b16f;
+    background:#5ae4a8;
 }
 
 form .user-details .input-box {
@@ -105,7 +105,7 @@ form .user-details .input-box {
     width: 90%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #5ae4a8;
     padding-left: 15px;
     font-size: 16px;
     border-bottom-width: 2px;
@@ -114,7 +114,7 @@ form .user-details .input-box {
 
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
-    border-color: #69b16f;
+    border-color: #1a2e35;
 }
 
 form .gender-details .gender-title{
@@ -122,7 +122,7 @@ form .gender-details .gender-title{
     font-weight: 500;
     display: flex;
     flex: 1;
-    justify-content: center;
+    justify-content:flex-start
 }
 
 form .gender-details .category{
@@ -138,8 +138,8 @@ form .gender-details .category{
 }
 
 .gender-details .category .dot{
-    height: 18px;
-    width: 18px;
+    height: 10px;
+    width: 10px;
     background: #d9d9d9;
     margin-right: 10px;
     border-radius: 50%;
@@ -151,7 +151,7 @@ form .gender-details .category{
 #dot-2:checked ~ .category label .two,
 #dot-3:checked ~ .category label .three{
     border-color: #d9d9d9;
-    background: #69b16f;
+    background: #5ae4a8;
 }
 
 form input[type="radio"]{
@@ -167,10 +167,11 @@ form .button input{
     width: 100%;
     outline: none;
     color: #fff;
-    background: #69b16f;
+    background: #5ae4a8;
     border: none;
     font-size: 18px;
     font-weight: 500;
     border-radius: 5px;
     letter-spacing: 1px;
+    margin-top: 15px;
 }
