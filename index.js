@@ -35,6 +35,11 @@ const isValidEmail = email => {
     return re.test(String(email).toLowerCase());
 }
 
+const isPhoneNumberValid = number => {
+    const re = /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/;
+    return re.test(String(number).toLowerCase());
+}
+
 const validateInputs = () => {
   
     const nameValue = fullname.value.trim();
@@ -52,6 +57,8 @@ const validateInputs = () => {
 
     if(numberValue === ''){
         setError(number, 'phone number is required');
+    }else if (!isPhoneNumberValid(numberValue)){
+        setError(number, 'provide a valid UK phone number');
     }else{
         setSuccess(number);
     }
