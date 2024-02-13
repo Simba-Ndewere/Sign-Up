@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
     <title>Sign Up</title>
 </head>
 
@@ -19,31 +20,37 @@
             <div class="imageRight">
                 <div class="form">
                     <div class="title">Register</div>
-                    <form action="#">
+                    <form id="form" action="#">
                         <div class="user-details">
                             <div class="input-box">
                                 <span class="details">Full Name</span>
-                                <input type="text" required>
+                                <input id="name" type="text" onblur="validateInputs()">
+                                <div class="error"></div>
                             </div>
                             <div class="input-box">
                                 <span class="details">Username</span>
-                                <input type="text" required>
+                                <input id="username" type="text" onblur="validateInputs()">
+                                <div class="error"></div>
                             </div>
                             <div class="input-box">
                                 <span class="details">Email</span>
-                                <input type="text" required>
+                                <input id="email" type="text" onblur="validateInputs()">
+                                <div class="error"></div>
                             </div>
                             <div class="input-box">
                                 <span class="details">Phone Number</span>
-                                <input type="text" required>
+                                <input id="number" type="number" minlength="11" maxlength="11" onblur="validateInputs()">
+                                <div class="error"></div>
                             </div>
                             <div class="input-box">
                                 <span class="details">Password</span>
-                                <input type="text" required>
+                                <input id="password" type="password" onblur="validateInputs()">
+                                <div class="error"></div>
                             </div>
                             <div class="input-box">
                                 <span class="details">Confirm Password</span>
-                                <input type="text" required>
+                                <input id="password2" type="password" onblur="validateInputs()">
+                                <div class="error"></div>
                             </div>
                         </div>
                         <div class="gender-details">
@@ -67,7 +74,7 @@
                             </div>
                         </div>
                         <div class="button">
-                            <input type = "submit" value="Register">
+                            <input type="submit" value="Register">
                         </div>
                     </form>
                 </div>

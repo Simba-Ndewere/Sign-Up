@@ -89,6 +89,11 @@ form {
     background:#5ae4a8;
 }
 
+.error {
+    color: red;
+    font-size: 12px;
+}
+
 form .user-details .input-box {
     margin-bottom: 15px;
     width: calc(100% / 2 - 20px)
@@ -98,6 +103,8 @@ form .user-details .input-box {
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
+    font-size: 17px;
+    color: black;
 }
 
 .user-details .input-box input {
@@ -105,20 +112,29 @@ form .user-details .input-box {
     width: 90%;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #5ae4a8;
+    border: 1px solid #1a2e35;;
     padding-left: 15px;
     font-size: 16px;
     border-bottom-width: 2px;
     transition: all 0.3s ease;
 }
 
-.user-details .input-box input:focus,
-.user-details .input-box input:valid{
+.user-details .input-box input:focus {
     border-color: #1a2e35;
+    outline: 0;
+}
+
+.input-box.error input{
+    border-color: #ff3860;
+}
+
+.input-box.success input{
+    border-color: #5ae4a8;
 }
 
 form .gender-details .gender-title{
     font-size: 20px;
+    margin-bottom: 15px;
     font-weight: 500;
     display: flex;
     flex: 1;
