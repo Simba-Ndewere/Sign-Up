@@ -6,12 +6,27 @@ const number = document.getElementById("number");
 const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 
+let fullnameBool = false;
+let usernameBool = false;
+let emailBool = false;
+let numberBool = false;
+let passwordBool = false;
+let password2Bool = false;
+let genderBool = false;
+
 form.addEventListener('submit', e => {
     e.preventDefault();
 
     for (let a = 0; a <= 6; a++) {
         validateInputs(a);
     }
+
+    if (fullnameBool == true && usernameBool == true && emailBool == true && numberBool == true && passwordBool == true && password2Bool == true && genderBool == true) {
+        console.log("valid");
+        e.preventDefault();
+        window.location.href = "index2.html";
+    } 
+
 });
 
 const setError = (element, message) => {
@@ -53,51 +68,67 @@ const validateInputs = (num) => {
 
     switch (num) {
         case 0: if (usernameValue === '') {
+            usernameBool = false;
             setError(username, 'username is required');
         } else {
+            usernameBool = true;
             setSuccess(username);
         }
             break;
 
         case 1: if (numberValue === '') {
+            numberBool = false;
             setError(number, 'phone number is required');
         } else if (!isPhoneNumberValid(numberValue)) {
+            numberBool = false;
             setError(number, 'provide a valid UK phone number');
         } else {
+            numberBool = true;
             setSuccess(number);
         }
             break;
 
         case 2: if (nameValue === '') {
+            fullnameBool = false;
             setError(fullname, 'fullname is required');
         } else {
+            fullnameBool = true;
             setSuccess(fullname);
         }
             break;
 
         case 3: if (emailValue === '') {
+            emailBool = false;
             setError(email, 'email is required');
         } else if (!isValidEmail(emailValue)) {
+            emailBool = false;
             setError(email, 'provide a valid email address');
         } else {
+            emailBool = true;
             setSuccess(email);
         }
             break;
 
         case 4: if (passwordValue === '') {
+            passwordBool = false;
             setError(password, 'password is required');
         } else if (passwordValue.length < 8) {
+            passwordBool = false;
             setError(password, "password must be at least 8 characters");
         } else {
+            passwordBool = true;
             setSuccess(password);
         }
             break;
 
         case 5: if (password2Value === '') {
+            password2Bool = false;
             setError(password2, 'please confirm your password');
         } else if (password2Value !== passwordValue) {
+            password2Bool = false;
             setError(password2, "password doesn't match");
         } else {
+            password2Bool = true;
             setSuccess(password2);
         }
             break;
@@ -108,7 +139,6 @@ const validateInputs = (num) => {
 };
 
 function validateGender() {
-    console.log("clicked");
     let genderRadios = document.getElementsByName('gender');
     let isValid = false;
     const genderDetails = document.querySelector(".gender-details")
@@ -124,7 +154,9 @@ function validateGender() {
     if (!isValid) {
         errorDisplay.innerText = "Please select gender";
         genderDetails.classList.add("error");
+        genderBool = false;
     } else {
+        genderBool = true;
         errorDisplay.innerText = "";
     }
 }
