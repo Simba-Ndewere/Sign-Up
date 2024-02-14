@@ -117,19 +117,22 @@ form .user-details .input-box {
     font-size: 16px;
     border-bottom-width: 2px;
     transition: all 0.3s ease;
+    background-color: white;
 }
 
 .user-details .input-box input:focus {
     border-color: #1a2e35;
-    outline: 0;
+    background-color: white;
 }
 
 .input-box.error input{
     border-color: #ff3860;
+    background-color: white;
 }
 
 .input-box.success input{
     border-color: #5ae4a8;
+    background-color: white;
 }
 
 form .gender-details .gender-title{

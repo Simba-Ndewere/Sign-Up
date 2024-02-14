@@ -9,7 +9,9 @@ const password2 = document.getElementById("password2");
 form.addEventListener('submit', e => {
     e.preventDefault();
 
-    validateInputs();
+    for (let a = 0; a <= 5; a++) {
+        validateInputs(a);
+    }
 });
 
 const setError = (element, message) => {
@@ -35,8 +37,13 @@ const isValidEmail = email => {
     return re.test(String(email).toLowerCase());
 }
 
-const validateInputs = () => {
-  
+const isPhoneNumberValid = number => {
+    const re = /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/;
+    return re.test(String(number).toLowerCase());
+}
+
+const validateInputs = (num) => {
+
     const nameValue = fullname.value.trim();
     const usernameValue = username.value.trim();
     const emailValue = email.value.trim();
@@ -44,46 +51,56 @@ const validateInputs = () => {
     const passwordValue = password.value.trim();
     const password2Value = password2.value.trim();
 
-    if(usernameValue === ''){
-        setError(username, 'username is required');
-    }else{
-        setSuccess(username);
-    }
+    switch (num) {
+        case 0: if (usernameValue === '') {
+            setError(username, 'username is required');
+        } else {
+            setSuccess(username);
+        }
+            break;
 
-    if(numberValue === ''){
-        setError(number, 'phone number is required');
-    }else{
-        setSuccess(number);
-    }
+        case 1: if (numberValue === '') {
+            setError(number, 'phone number is required');
+        } else if (!isPhoneNumberValid(numberValue)) {
+            setError(number, 'provide a valid UK phone number');
+        } else {
+            setSuccess(number);
+        }
+             break;
 
-    if(nameValue === ''){
-        setError(fullname, 'fullname is required');
-    }else{
-        setSuccess(fullname);
-    }
+        case 2: if (nameValue === '') {
+            setError(fullname, 'fullname is required');
+        } else {
+            setSuccess(fullname);
+        }
+            break;
 
-    if(emailValue === ''){
-        setError(email, 'email is required');
-    }else if (!isValidEmail(emailValue)){
-        setError(email, 'provide a valid email address');
-    }else{
-        setSuccess(email);
-    }
+        case 3: if (emailValue === '') {
+            setError(email, 'email is required');
+        } else if (!isValidEmail(emailValue)) {
+            setError(email, 'provide a valid email address');
+        } else {
+            setSuccess(email);
+        }
+            break;
 
-    if(passwordValue === ''){
-        setError(password, 'password is required');
-    }else if(passwordValue.length < 8){
-        setError(password, "password must be at least 8 characters");
-    }else{
-        setSuccess(password);
-    }
+        case 4: if (passwordValue === '') {
+            setError(password, 'password is required');
+        } else if (passwordValue.length < 8) {
+            setError(password, "password must be at least 8 characters");
+        } else {
+            setSuccess(password);
+        }
+            break;
 
-    if(password2Value === ''){
-        setError(password2, 'please confirm your password');
-    }else if(password2Value !== passwordValue){
-        setError(password2, "password doesn't match");
-    }else{
-        setSuccess(password2);
+        case 5: if (password2Value === '') {
+            setError(password2, 'please confirm your password');
+        } else if (password2Value !== passwordValue) {
+            setError(password2, "password doesn't match");
+        } else {
+            setSuccess(password2);
+        }
+            break;
     }
 };
 
