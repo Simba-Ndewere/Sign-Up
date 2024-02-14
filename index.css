@@ -159,6 +159,12 @@ form .gender-details .category{
     
 }
 
+.successful {
+    font-family: 'Roboto Mono',sans-serif;
+    font-size: 30px;
+    margin: auto;
+}
+
 div span.gender {
     font-size: 16px;
 }
