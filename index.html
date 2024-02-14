@@ -39,11 +39,7 @@
                             </div>
                             <div class="input-box">
                                 <span class="details">Phone Number</span>
-<<<<<<< HEAD
                                 <input id="number" onblur="validateInputs(1)">
-=======
-                                <input id="number" onblur="validateInputs()">
->>>>>>> 02331b7ca933e4966e48a58f1d03d76047585d36
                                 <div class="error"></div>
                             </div>
                             <div class="input-box">
@@ -57,12 +53,13 @@
                                 <div class="error"></div>
                             </div>
                         </div>
-                        <div class="gender-details">
-                            <input type ="radio" name="gender" id="dot-1" >
-                            <input type ="radio" name="gender" id="dot-2" >
-                            <input type ="radio" name="gender" id="dot-3" >
+                        <div class="gender-details" >
+                            <input type ="radio" name="gender" id="dot-1" onclick="validateInputs(6)">
+                            <input type ="radio" name="gender" id="dot-2" onclick="validateInputs(6)">
+                            <input type ="radio" name="gender" id="dot-3" onclick="validateInputs(6)">
                             <span class="gender-title">Gender</span>
-                            <div class="category">
+                            <div class="error"></div>
+                            <div class="category" >
                                 <label for ="dot-1">
                                     <span class="dot one"></span>
                                     <span class="gender">Male</span>

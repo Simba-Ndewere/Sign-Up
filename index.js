@@ -9,7 +9,7 @@ const password2 = document.getElementById("password2");
 form.addEventListener('submit', e => {
     e.preventDefault();
 
-    for (let a = 0; a <= 5; a++) {
+    for (let a = 0; a <= 6; a++) {
         validateInputs(a);
     }
 });
@@ -66,7 +66,7 @@ const validateInputs = (num) => {
         } else {
             setSuccess(number);
         }
-             break;
+            break;
 
         case 2: if (nameValue === '') {
             setError(fullname, 'fullname is required');
@@ -101,8 +101,33 @@ const validateInputs = (num) => {
             setSuccess(password2);
         }
             break;
+
+        case 6: validateGender();
+            break;
     }
 };
+
+function validateGender() {
+    console.log("clicked");
+    let genderRadios = document.getElementsByName('gender');
+    let isValid = false;
+    const genderDetails = document.querySelector(".gender-details")
+    const errorDisplay = genderDetails.querySelector(".error");
+
+    for (let i = 0; i < genderRadios.length; i++) {
+        if (genderRadios[i].checked) {
+            isValid = true;
+            break;
+        }
+    }
+
+    if (!isValid) {
+        errorDisplay.innerText = "Please select gender";
+        genderDetails.classList.add("error");
+    } else {
+        errorDisplay.innerText = "";
+    }
+}
 
 
 
